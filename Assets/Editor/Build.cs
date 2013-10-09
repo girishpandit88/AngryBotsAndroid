@@ -14,7 +14,7 @@ public static class AutoBuilder {
 	}
 
         static string APPNAME = "AndroidAngryBots";
-	static string TARGET = "target";
+	static string TARGET = "/tmp/workspace/android-angrybots-unity";
 	static string[] GetScenePaths()
 	{
 		List<string> EditorScenes = new List<string>();
