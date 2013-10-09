@@ -35,10 +35,11 @@ public static class AutoBuilder {
 		PlayerSettings.bundleIdentifier = "com.ea.SimpleTextEditor";
 		PlayerSettings.bundleVersion = "1.0";
 		EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.iPhone);
-		string error = BuildPipeline.BuildPlayer(GetScenePaths(), "BuildiOS/app/android",BuildTarget.iPhone,BuildOptions.None);
+		string target_dir = "/tmp/workspace/iOS-angrybots-unity";
+		string error = BuildPipeline.BuildPlayer(GetScenePaths(),target_dir,BuildTarget.iPhone,BuildOptions.None);
 		if (error != null && error.Length > 0) {
-            throw new Exception("Build failed: " + error);
-        }
+            		throw new Exception("Build failed: " + error);
+        	}
 	}
 	[MenuItem("File/AutoBuilder/Android")]
 	static void PerformAndroidBuild ()
