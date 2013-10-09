@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +13,8 @@ public static class AutoBuilder {
 		return s[s.Length - 2];
 	}
 
+        static string APPNAME = "AndroidAngryBots";
+	static string TARGET = "target";
 	static string[] GetScenePaths()
 	{
 		List<string> EditorScenes = new List<string>();
@@ -41,7 +43,7 @@ public static class AutoBuilder {
 	[MenuItem("File/AutoBuilder/Android")]
 	static void PerformAndroidBuild ()
 	{
-		string target_dir = "BuildiOS/app/android/AngryBots.apk";
+		string target_dir = TARGET+"/"+APPNAME+".apk";
 		EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
 		string error = BuildPipeline.BuildPlayer(GetScenePaths(), target_dir, BuildTarget.Android, BuildOptions.None);
 		if(error!=null && error.Length>0)
