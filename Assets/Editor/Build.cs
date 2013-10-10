@@ -14,7 +14,7 @@ public static class AutoBuilder {
 	}
 
         static string APPNAME = "AndroidAngryBots";
-	static string TARGET = "/tmp/workspace/android-angrybots-unity";
+	static string TARGET = "/tmp/workspace/target";
 	static string[] GetScenePaths()
 	{
 		List<string> EditorScenes = new List<string>();
@@ -35,7 +35,7 @@ public static class AutoBuilder {
 		PlayerSettings.bundleIdentifier = "com.ea.SimpleTextEditor";
 		PlayerSettings.bundleVersion = "1.0";
 		EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.iPhone);
-		string target_dir = "/tmp/workspace/iOS-angrybots-unity";
+		string target_dir = TARGET + "/iOS-angrybots-unity";
 		string error = BuildPipeline.BuildPlayer(GetScenePaths(),target_dir,BuildTarget.iPhone,BuildOptions.None);
 		if (error != null && error.Length > 0) {
             		throw new Exception("Build failed: " + error);
@@ -44,7 +44,7 @@ public static class AutoBuilder {
 	[MenuItem("File/AutoBuilder/Android")]
 	static void PerformAndroidBuild ()
 	{
-		string target_dir = TARGET+"/"+APPNAME+".apk";
+		string target_dir = TARGET + "/android-angrybots-unity/" + APPNAME + ".apk";
 		EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
 		string error = BuildPipeline.BuildPlayer(GetScenePaths(), target_dir, BuildTarget.Android, BuildOptions.None);
 		if(error!=null && error.Length>0)
