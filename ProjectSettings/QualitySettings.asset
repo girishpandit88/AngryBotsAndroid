@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 4
+  m_CurrentQuality: 3
   m_QualitySettings:
   - serializedVersion: 2
     name: Fastest
@@ -67,13 +67,13 @@ QualitySettings:
     name: Good
     pixelLightCount: 2
     shadows: 1
-    shadowResolution: 2
+    shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 2
     shadowDistance: 37.5
-    blendWeights: 2
-    textureQuality: 0
-    anisotropicTextures: 1
+    blendWeights: 1
+    textureQuality: 3
+    anisotropicTextures: 0
     antiAliasing: 0
     softParticles: 0
     softVegetation: 1
@@ -122,6 +122,7 @@ QualitySettings:
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 3
+    BlackBerry: 0
     FlashPlayer: 3
     GLES Emulation: 3
     PS3: 3
