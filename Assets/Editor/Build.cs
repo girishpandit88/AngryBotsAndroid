@@ -7,13 +7,7 @@ using System;
 
 public static class AutoBuilder {
 
-	static string GetProjectName()
-	{
-		string[] s = Application.dataPath.Split('/');
-		return s[s.Length - 2];
-	}
-
-        static string APPNAME = "AngryBots";
+	static string APPNAME = "AngryBots";
 	static string TARGET = "target";
 	static string[] GetScenePaths()
 	{
